@@ -1,0 +1,168 @@
+/* Existing styles */
+.imgWrapper{
+    width: 200px;
+    height: 70px;
+    border-radius: 15px;
+}
+.img{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+}
+nav{
+    background: #101e32;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.hamburger-button {
+    width: 30px;
+    height: 25px;
+    position: relative;
+    cursor: pointer;
+    display: none; /* Hide by default, show on mobile */
+}
+  
+.hamburger-button span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: whitesmoke;
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+  
+.hamburger-button span:nth-child(1) { top: 0px; }
+.hamburger-button span:nth-child(2) { top: 10px; }
+.hamburger-button span:nth-child(3) { top: 20px; }
+  
+.hamburger-button.open span:nth-child(1) {
+    top: 10px;
+    transform: rotate(135deg);
+}
+  
+.hamburger-button.open span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+}
+  
+.hamburger-button.open span:nth-child(3) {
+    top: 10px;
+    transform: rotate(-135deg);
+}
+
+.search{
+    text-align: center;
+    height: 40px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search input{
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    width: 100%;
+    max-width: 500px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+}
+.search button{
+    height: 40px;
+    border-radius: 0 10px 10px 0;
+    background-color: #101e32;
+    border: none;
+    padding: 0 15px;
+    cursor: pointer;
+}
+.search button .svg{
+    color: white;
+    font-size: 20px;
+}
+
+/* Responsive styles */
+
+
+ 
+/* Update these styles in your home.css file */
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #101e32;
+    padding: 10px;
+    z-index: 1000;
+    height: 100vh;
+}
+
+.mobile-menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+/* Updated responsive styles */
+@media (max-width: 1024px) { /* This will cover most laptops */
+    .hamburger-button {
+        display: block;
+        z-index: 1001;
+    }
+
+    .mobile-menu.open {
+        display: block;
+    }
+}
+
+/* You can keep your existing media queries for smaller screens */
+@media (max-width: 768px) {
+    .imgWrapper {
+        width: 150px;
+        height: 50px;
+    }
+    
+    .search {
+        margin-top: 15px;
+    }
+    
+    .search input {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .imgWrapper {
+        width: 120px;
+        height: 40px;
+    }
+    
+    nav {
+        padding: 5px;
+    }
+    
+    .search input {
+        max-width: 200px;
+    }
+    
+    .search button {
+        padding: 0 10px;
+    }
+
+}
+.homeimage{
+    display: flex;
+    margin-top: 30px;
+    gap: 20px;
+    justify-content: center;
+    
+}
+}
