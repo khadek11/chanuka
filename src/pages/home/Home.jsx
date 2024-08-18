@@ -66,7 +66,7 @@ function Home() {
         </form>
 
         <div className="politicians-grid">
-          {politicians.map((politician) => (
+           {filteredPoliticians.map((politician) => (
             <div key={politician.id} className={`politician-card size-${politician.id}`}>
               <img src={politician.image} alt={politician.name} />
               <h3>{politician.name}</h3>
