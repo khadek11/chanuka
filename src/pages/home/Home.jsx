@@ -3,21 +3,31 @@ import "./home.css";
 import screenshot from "../../assets/screenshot.png";
 import { IoSearchSharp } from "react-icons/io5";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { useEffect } from "react";
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const [politicians, setPoliticians] = useState([
+  const [filteredPoliticians, setFilteredPoliticians] = useState([]);
+  const [politicians] = useState([
     { id: 1, name: "William Samoei Ruto", image: "https://up.yimg.com/ib/th?id=OIP.s7p8x68PzoufeB_QW0HuAgHaHa&pid=Api&rs=1&c=1&qlt=95&w=104&h=104" },
-    { id: 2, name: "Jane Smith", image: "https://up.yimg.com/ib/th?id=OIP.s7p8x68PzoufeB_QW0HuAgHaHa&pid=Api&rs=1&c=1&qlt=95&w=104&h=104" },
-    { id: 3, name: "Bob Johnson", image: "https://up.yimg.com/ib/th?id=OIP.s7p8x68PzoufeB_QW0HuAgHaHa&pid=Api&rs=1&c=1&qlt=95&w=104&h=104" },
-    { id: 4, name: "Alice Brown", image: "https://up.yimg.com/ib/th?id=OIP.s7p8x68PzoufeB_QW0HuAgHaHa&pid=Api&rs=1&c=1&qlt=95&w=104&h=104" },
-    { id: 5, name: "Charlie Wilson", image: "https://up.yimg.com/ib/th?id=OIP.s7p8x68PzoufeB_QW0HuAgHaHa&pid=Api&rs=1&c=1&qlt=95&w=104&h=104" },
+    { id: 2, name: "Raila Odinga", image: "https://tse1.mm.bing.net/th?id=OIP.uazUMC9JDVxZ1CrHcjjJgwHaFd&pid=Api" },
+    { id: 3, name: "Antony Kimani", image: "https://genmiles.com/wp-content/uploads/2023/04/Anthony-Kimani-Ichungwa-jpg.webp" },
+    { id: 4, name: "Alice Brown", image: "https://president.go.ke/wp-content/uploads/A33O4896-scaled-e1667324348580.jpg" },
+    { id: 5, name: "Adan Ndwale", image: "https://tse1.mm.bing.net/th?id=OIP.Vz4x09SKJHxOkxeNMuSoowHaHa&pid=Api&P=0&h=220" },
   ]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+  useEffect(() => {
+    // Filter politicians based on search term
+    const filtered = politicians.filter(politician =>
+      politician.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredPoliticians(filtered);
+  }, [searchTerm, politicians]);
+
 
   const handleSearch = (e) => {
     e.preventDefault();
