@@ -294,3 +294,47 @@ nav{
       grid-template-columns: 1fr;
     }
   }
+/* Add these styles to your home.css file */
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.about-content h1 {
+  color: whitesmoke;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.about-content h2 {
+  color: whitesmoke;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.about-content p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.about-content ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.about-content li {
+  margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    padding: 15px;
+  }
+}
+.about{
+  color: whitesmoke;
+  text-align: center;
+}

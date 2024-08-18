@@ -4,6 +4,7 @@ import screenshot from "../../assets/screenshot.png";
 import { IoSearchSharp } from "react-icons/io5";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,9 +49,10 @@ function Home() {
         </div>
       </nav>
       <div className={`mobile-menu ${isOpen ? "open" : ""}`}>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/">Contact</Link>
+       
       </div>
       <div className="main">
         <form className="search" onSubmit={handleSearch}>
@@ -83,9 +85,9 @@ function Home() {
           <div className="footer-section">
             <h3>Quick Links</h3>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
+              <li> <Link to="/">Home</Link> </li>
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/">Contact</Link></li>
             </ul>
           </div>
           <div className="footer-section">
